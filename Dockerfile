@@ -4,12 +4,10 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY server.py .
+COPY mcptrust_server.py .
 
-# Database volume for persistence
-VOLUME ["/app/data"]
-ENV DUCKDB_PATH=/app/data/mcptrust.duckdb
+ENV DUCKDB_PATH=/app/mcptrust.duckdb
 
 EXPOSE 8000
 
-CMD ["python", "server.py"]
+CMD ["python", "mcptrust_server.py"]
