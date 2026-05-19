@@ -564,4 +564,4 @@ if __name__ == "__main__":
     print("Tools: scan_mcp_server, get_trust_score, list_dangerous_servers,")
     print("       compare_servers, get_weekly_report, search_scanned_servers")
     print("Resources: mcptrust://scoring-guide, mcptrust://mcp-security-101")
-    mcp.run()
+    mcp.run(transport="streamable-http", host="0.0.0.0", port=8000)
